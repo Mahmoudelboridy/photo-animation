@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>shaitt</title>
+        <style>
+       img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        cursor:pointer;
+
+       }
+       img:hover {
+        transform: scale(1.1);
+        transition:0.5s;
+       }
+        </style>
+    </head>
+    <body>
+        <img src="0.jpg" id="d1" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:-200;" />
+        <img src="1.jpg" id="d2" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:100;" />
+        <img src="2.jpg" id="d3" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:400;" />
+        <img src="3.jpg" id="d4" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:700;" />
+        <img src="4.jpg" id="d5" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:1000;" />
+
+
+
+       
+        <script>
+        let d1=document.getElementById("d1");
+        let d2=document.getElementById("d2");
+        let d3=document.getElementById("d3");
+        let d4=document.getElementById("d4");
+        let d5=document.getElementById("d5");
+
+let ani;
+
+   let x=-200,y=100,z=400,a=700,b=1000;
+        function mnr() {
+          x=x+300;
+          y=y+300;
+          z=z+300;
+          a=a+300;
+          b=b+300;
+        
+          d1.style.left=x;
+          d2.style.left=y;
+          d3.style.left=z;
+          d4.style.left=a;
+          d5.style.left=b;
+
+
+
+
+          if(x>1200){
+            x=-200;
+          }
+          if(y>1200){
+            y=-200;
+          }
+          if(z>1200){
+            z=-200;
+          }
+          if(a>1200){
+            a=-200;
+          }
+          if(b>1200){
+            b=-200;
+          }
+        
+        
+         ani= setTimeout("mnr()",4000);
+        }
+        mnr();
+        function stop(){
+            clearTimeout(ani);
+        }
+        </script>
+    </body>
+</html>
